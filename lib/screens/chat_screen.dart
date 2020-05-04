@@ -27,7 +27,11 @@ class ChatScreen extends StatelessWidget {
           }),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Firestore.instance
+              .collection('chats/rJFhwrjmNNfhnDYxzWP7/messages')
+              .add({'text': 'This was added by clicking the FAB!'});
+        },
       ),
     );
   }
